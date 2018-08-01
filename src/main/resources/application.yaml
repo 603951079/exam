@@ -1,0 +1,42 @@
+spring:
+  profiles:
+    active: dev
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+server:
+  port: 8081
+  servlet:
+    context-path: /exam
+  compression:
+    enabled: true
+
+logging:
+  level:
+    root: info
+    com.crcc.exam: debug
+    org.hibernate: info
+
+app:
+  roleId: e25d7c1c-1be4-47f2-bbca-b8e9167c76fc
+
+---
+spring:
+  profiles: dev
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/exam?useUnicode=true&characterEncoding=utf8&autoReconnect=true
+    username: root
+    password: x5
+    driver-class-name: com.mysql.jdbc.Driver
+
+
+---
+spring:
+  profiles: pro
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/exam?useUnicode=true&characterEncoding=utf8&autoReconnect=true
+    username: root
+    password: x5
+    driver-class-name: com.mysql.jdbc.Driver
